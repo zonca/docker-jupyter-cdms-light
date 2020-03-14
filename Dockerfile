@@ -1,2 +1,1 @@
-ARG BASE_CONTAINER=slaclab/slac-jupyterhub:20191203.0
-FROM $BASE_CONTAINER
+FROM jupyter/tensorflow-notebook:latest
