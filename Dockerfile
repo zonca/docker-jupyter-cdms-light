@@ -1,1 +1,1 @@
-FROM jupyter/tensorflow-notebook:latest
+FROM zonca/jupyter-docker-stacks-centos7:tensorflow
