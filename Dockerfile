@@ -1,4 +1,4 @@
-FROM zonca/jupyter-docker-stacks-centos7:tensorflow
+FROM zonca/jupyter-docker-stacks-centos7:tensorflow-2020.07
 
 COPY install_cdms_kernels /usr/local/bin/
 COPY install_cdms_kernels /usr/local/bin/before-notebook.d/
