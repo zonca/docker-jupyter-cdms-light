@@ -1,5 +1,5 @@
 build:
-	sudo docker build -t zonca/docker-jupyter-cdms-light .
+	docker build -t zonca/docker-jupyter-cdms-light:${VERSION} .
 
 push:
-	sudo docker push zonca/docker-jupyter-cdms-light:latest
+	docker push zonca/docker-jupyter-cdms-light:${VERSION}
