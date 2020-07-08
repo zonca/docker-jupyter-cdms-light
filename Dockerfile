@@ -3,6 +3,12 @@ FROM zonca/jupyter-docker-stacks-centos7:tensorflow-2020.07
 COPY install_cdms_kernels /usr/local/bin/
 COPY install_cdms_kernels /usr/local/bin/before-notebook.d/
 
+USER root
+
+RUN yum install -y vim-enhanced nano emacs
+
+USER $NB_UID
+
 # install conda packages and jupyter lab extensions
 
 RUN conda install --quiet --yes \
