@@ -16,9 +16,22 @@ Finally we inherit from that image to create `docker-jupyter-cdms-light`:
 
 <https://github.com/zonca/docker-jupyter-cdms-light>
 
+As examples, checkout the `Dockerfile` files in <https://github.com/zonca/jupyter-docker-stacks-centos7>
+
+## Image build on DockerHub
+
 This is setup with [autobuild on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
 It automatically builds `master` as `latest` and it builds all the tags.
 
 Better not use `latest` in production, always make a tag and use that.
 
-As examples, checkout the `Dockerfile` files in <https://github.com/zonca/jupyter-docker-stacks-centos7>
+## Deploy in production
+
+The version of the image used in production is defined in `config_standard_storage.yaml`:
+
+  image:                                                                                                           
+    name: "zonca/docker-jupyter-cdms-light"                                                                        
+    tag: "2020.11.25"
+    
+need to update that and then run `install_jhub.sh`.
+
