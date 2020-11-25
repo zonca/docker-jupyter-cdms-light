@@ -5,7 +5,7 @@ COPY install_cdms_kernels /usr/local/bin/before-notebook.d/
 
 USER root
 
-RUN yum install -y vim-enhanced nano emacs
+RUN yum install -y vim-enhanced nano emacs texlive texlive-cm-super texlive-dvipng texlive-dvipng-bin
 
 USER $NB_UID
 
