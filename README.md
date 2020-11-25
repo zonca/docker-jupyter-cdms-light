@@ -29,9 +29,11 @@ Better not use `latest` in production, always make a tag and use that.
 
 The version of the image used in production is defined in `config_standard_storage.yaml`:
 
+```yaml
   image:                                                                                                           
     name: "zonca/docker-jupyter-cdms-light"                                                                        
     tag: "2020.11.25"
+```
     
 need to update that and then run `install_jhub.sh`.
 
