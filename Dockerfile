@@ -16,7 +16,7 @@ USER $NB_UID
 
 RUN conda upgrade --quiet --yes 'jupyterlab' && \
     conda install --quiet --yes \
-    'jupyterlab-system-monitor' \
+    'jupyterlab-system-monitor' ipympl \
     && \
     conda clean --all -f -y && \
     rm -rf "/home/${NB_USER}/.cache/yarn" && \
