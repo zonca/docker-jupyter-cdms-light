@@ -14,14 +14,11 @@ USER $NB_UID
 
 # install conda packages and jupyter lab extensions
 
-RUN conda install --quiet --yes \
-    'nbresuse' \
+RUN conda upgrade --quiet --yes 'jupyterlab' && \
+    conda install --quiet --yes \
+    'jupyterlab-system-monitor' \
     && \
     conda clean --all -f -y && \
-    jupyter labextension install jupyterlab-topbar-extension jupyterlab-system-monitor --no-build && \
-    jupyter lab build -y && \
-    jupyter lab clean -y && \
-    npm cache clean --force && \
     rm -rf "/home/${NB_USER}/.cache/yarn" && \
     rm -rf "/home/${NB_USER}/.node-gyp" && \
     fix-permissions "${CONDA_DIR}" && \
