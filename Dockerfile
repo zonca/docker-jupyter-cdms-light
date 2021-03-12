@@ -1,7 +1,10 @@
 FROM zonca/jupyter-docker-stacks-centos7:tensorflow-2020.07
 
 COPY install_cdms_kernels /usr/local/bin/
-COPY install_cdms_kernels /usr/local/bin/before-notebook.d/
+# automatic run of the install kernels script was not working
+# disabled it
+# see https://github.com/det-lab/jupyterhub-deploy-kubernetes-jetstream/issues/27
+# COPY install_cdms_kernels /usr/local/bin/before-notebook.d/
 
 USER root
 
