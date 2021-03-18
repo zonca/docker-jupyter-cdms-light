@@ -14,9 +14,9 @@ USER $NB_UID
 
 # install conda packages and jupyter lab extensions
 
-RUN conda upgrade --quiet --yes 'jupyterlab' && \
+RUN conda upgrade --quiet --yes 'jupyterlab' ipympl ipywidgets && \
     conda install --quiet --yes \
-    'jupyterlab-system-monitor' ipympl \
+    'jupyterlab-system-monitor' \
     && \
     conda clean --all -f -y && \
     rm -rf "/home/${NB_USER}/.cache/yarn" && \
