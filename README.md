@@ -18,12 +18,15 @@ Finally we inherit from that image to create `docker-jupyter-cdms-light`:
 
 As examples, checkout the `Dockerfile` files in <https://github.com/zonca/jupyter-docker-stacks-centos7>
 
-## Image build on DockerHub
+## Image build on DockerHub (stopped working)
 
 This is setup with [autobuild on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
 It automatically builds `master` as `latest` and it builds all the tags.
 
 Better not use `latest` in production, always make a tag and use that.
+
+Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/blog/changes-to-docker-hub-autobuilds),
+so now we need to build a new image on a machine with Docker and then push to Dockerhub.
 
 ## Deploy in production
 
