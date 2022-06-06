@@ -33,10 +33,9 @@ so now we need to build a new image on a machine with Docker and then push to Do
 The version of the image used in production is defined in `config_standard_storage.yaml`:
 
 ```yaml
-  image:                                                                                                           
-    name: "zonca/docker-jupyter-cdms-light"                                                                        
+  image:
+    name: "zonca/docker-jupyter-cdms-light"
     tag: "2020.11.25"
 ```
-    
-need to update that and then run `install_jhub.sh`.
 
+need to update that and then run `install_jhub.sh`.
