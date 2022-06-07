@@ -39,11 +39,12 @@ Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/
 so now we need to build a new image on a machine with Docker and then push to Dockerhub:
 
 ```
-sudo docker build -t zonca/docker-jupyter-cdms-light:22.06.1 .
+sudo docker build -t zonca/docker-jupyter-cdms-light:<version> .
 sudo docker login
-sudo docker push zonca/docker-jupyter-cdms-light:22.06.1
-
+sudo docker push zonca/docker-jupyter-cdms-light:<version>
 ```
+
+See the section above for information on defining the version.
 
 ## Deploy in production
 
