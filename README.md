@@ -18,6 +18,16 @@ Finally we inherit from that image to create `docker-jupyter-cdms-light`:
 
 As examples, checkout the `Dockerfile` files in <https://github.com/zonca/jupyter-docker-stacks-centos7>
 
+## Versioning
+
+![Calver badge](https://img.shields.io/badge/calver-YY.0M.MICRO-22bfda.svg)
+
+Generally we update a few times a year and we do 3/4 releases the same day, so let's use same versioning system used by Ubuntu:
+
+`YY.0M.MICRO`
+
+See <https://calver.org/>
+
 ## Image build on DockerHub (stopped working)
 
 This is setup with [autobuild on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
