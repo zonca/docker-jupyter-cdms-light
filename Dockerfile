@@ -18,6 +18,8 @@ RUN yum install -y vim-enhanced nano emacs \
     texlive texlive-cm-super texlive-dvipng texlive-dvipng-bin \
     MariaDB-client MariaDB-devel MariaDB-connect-engine
 
+RUN curl https://rclone.org/install.sh | bash
+
 USER $NB_UID
 
 # upgrade all conda packages
