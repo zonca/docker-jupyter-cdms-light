@@ -28,15 +28,22 @@ Generally we update a few times a year and we do 3/4 releases the same day, so l
 
 See <https://calver.org/>
 
-## Image build on DockerHub (stopped working)
+Better to not use `latest` in production, always make a tag and use that.  See [the Image build section](#image-build) for instructions on how to do this.
 
-This is setup with [autobuild on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
-It automatically builds `master` as `latest` and it builds all the tags.
+## Image build
 
-Better not use `latest` in production, always make a tag and use that.
+The container is hosted [on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
 
 Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/blog/changes-to-docker-hub-autobuilds),
 so now we need to build a new image on a machine with Docker and then push to Dockerhub.
+
+The `Makefile` in this directory provides useful docker commands.  All commands assume (1) that you set a `VERSION` environment variable for the tag (see [the versioning section](#Versioning)) and (2) that you can run `docker` without `sudo`.  See [the Docker documentation](https://docs.docker.com/engine/install/linux-postinstall/) if you need to set this up.
+
+* `make build` builds a container from the Dockerfile
+* `make shell` will drop you into an image shell; useful if you want to check anything before pushing
+* `make push` uploads the container to [dockerhub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light).  For this command to work you will need access to this dockerhub project - get a dockerhub account if you don't already have one and request access from the maintainer of this repository.  You can `make login` if you are not already authenticated to dockerhub. 
+
+If your shell supports tab completion, `make` <kbd>space</kbd><kbd>tab</kbd><kbd>tab</kbd> will show all available commands (or "targets" in make-language).  You can also open `Makefile` in a text editor to see available targets.
 
 ## Deploy in production
 
