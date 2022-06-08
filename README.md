@@ -38,6 +38,16 @@ Better not use `latest` in production, always make a tag and use that.
 Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/blog/changes-to-docker-hub-autobuilds),
 so now we need to build a new image on a machine with Docker and then push to Dockerhub.
 
+The `Makefile` in this directory provides several commands (`make build` and `make push`) that build an image and push it to Dockerhub.  The file assumes (1) that you set a `VERSION` environment variable and (2) that you can run `docker` without `sudo`, see (the Docker documentation)[https://docs.docker.com/engine/install/linux-postinstall/] if you need to set this up.
+
+You can check your container before pushing it with:
+
+```
+docker run -it zonca/docker-jupyter-cdms-light:<version>
+docker ps #this output will tell you the image name
+docker exec -it <container_name> bash
+```
+
 ## Deploy in production
 
 The version of the image used in production is defined in `config_standard_storage.yaml`:
