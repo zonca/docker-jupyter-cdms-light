@@ -28,11 +28,11 @@ Generally we update a few times a year and we do 3/4 releases the same day, so l
 
 See <https://calver.org/>
 
+Better to not use `latest` in production, always make a tag and use that.  See [the Image build section](#image-build) for instructions on how to do this.
+
 ## Image build
 
-This is setup [on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
-
-Better not use `latest` in production, always make a tag and use that.
+The container is hosted [on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
 
 Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/blog/changes-to-docker-hub-autobuilds),
 so now we need to build a new image on a machine with Docker and then push to Dockerhub.
@@ -41,7 +41,7 @@ The `Makefile` in this directory provides useful docker commands.  All commands 
 
 * `make build` builds a container from the Dockerfile
 * `make shell` will drop you into an image shell; useful if you want to check anything before pushing
-* `make push` uploads the container to https://hub.docker.com/r/zonca/docker-jupyter-cdms-light.  For this command to work you will need access to this dockerhub project - get a dockerhub account if you don't already have one and request access from the maintainer of this repository.  You can `make login` if you are not already authenticated to dockerhub. 
+* `make push` uploads the container to [dockerhub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light).  For this command to work you will need access to this dockerhub project - get a dockerhub account if you don't already have one and request access from the maintainer of this repository.  You can `make login` if you are not already authenticated to dockerhub. 
 
 ## Deploy in production
 
