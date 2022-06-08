@@ -37,11 +37,11 @@ Better not use `latest` in production, always make a tag and use that.
 Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/blog/changes-to-docker-hub-autobuilds),
 so now we need to build a new image on a machine with Docker and then push to Dockerhub.
 
-The `Makefile` in this directory provides useful docker commands.  All commands assume (1) that you set a `VERSION` environment variable for the tag (see [the versioning section](#Versioning)) and (2) that you can run `docker` without `sudo`.  See (the Docker documentation)[https://docs.docker.com/engine/install/linux-postinstall/] if you need to set this up.
+The `Makefile` in this directory provides useful docker commands.  All commands assume (1) that you set a `VERSION` environment variable for the tag (see [the versioning section](#Versioning)) and (2) that you can run `docker` without `sudo`.  See [the Docker documentation](https://docs.docker.com/engine/install/linux-postinstall/) if you need to set this up.
 
 * `make build` builds a container from the Dockerfile
 * `make shell` will drop you into an image shell; useful if you want to check anything before pushing
-* `make push` uploads the container to https://hub.docker.com/r/zonca/docker-jupyter-cdms-light.  For this command to work you will (1) need access to this dockerhub project and (2) need to authenticate to dockerhub. 
+* `make push` uploads the container to https://hub.docker.com/r/zonca/docker-jupyter-cdms-light.  For this command to work you will need access to this dockerhub project - get a dockerhub account if you don't already have one and request the maintainer of this repository for access. 
 
 ## Deploy in production
 
