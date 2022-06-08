@@ -26,7 +26,7 @@ USER $NB_UID
 
 RUN conda upgrade --quiet --yes --all && \
     conda install --quiet --yes \
-    'jupyterlab-system-monitor' \
+    'jupyterlab-system-monitor' && \
     conda clean --all -f -y && \
     rm -rf "/home/${NB_USER}/.cache/yarn" && \
     rm -rf "/home/${NB_USER}/.node-gyp" && \
