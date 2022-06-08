@@ -30,23 +30,18 @@ See <https://calver.org/>
 
 ## Image build on DockerHub (stopped working)
 
-This is setup with [autobuild on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
-It automatically builds `master` as `latest` and it builds all the tags.
+This is setup [on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
 
 Better not use `latest` in production, always make a tag and use that.
 
 Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/blog/changes-to-docker-hub-autobuilds),
 so now we need to build a new image on a machine with Docker and then push to Dockerhub.
 
-The `Makefile` in this directory provides several commands (`make build` and `make push`) that build an image and push it to Dockerhub.  The file assumes (1) that you set a `VERSION` environment variable and (2) that you can run `docker` without `sudo`, see (the Docker documentation)[https://docs.docker.com/engine/install/linux-postinstall/] if you need to set this up.
+The `Makefile` in this directory provides useful docker commands.  All commands assume (1) that you set a `VERSION` environment variable for the tag (see [the versioning section](#Versioning)) and (2) that you can run `docker` without `sudo`.  See (the Docker documentation)[https://docs.docker.com/engine/install/linux-postinstall/] if you need to set this up.
 
-You can check your container before pushing it with:
-
-```
-docker run -it zonca/docker-jupyter-cdms-light:<version>
-docker ps #this output will tell you the image name
-docker exec -it <container_name> bash
-```
+* `make build` builds a container from the Dockerfile
+* `make shell` will drop you into an image shell; useful if you want to check anything before pushing
+* `make push` uploads the container to https://hub.docker.com/r/zonca/docker-jupyter-cdms-light.  For this command to work you will (1) need access to this dockerhub project and (2) need to authenticate to dockerhub.push it to Dockerhub.  
 
 ## Deploy in production
 
