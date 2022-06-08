@@ -46,6 +46,14 @@ sudo docker push zonca/docker-jupyter-cdms-light:<version>
 
 See the section above for information on defining the version.
 
+You can check your container before pushing it with:
+
+```
+sudo docker run -it zonca/docker-jupyter-cdms-light:<version>
+sudo docker ps #this output will tell you the image name
+sudo docker exec -it <container_name> bash
+```
+
 ## Deploy in production
 
 The version of the image used in production is defined in `config_standard_storage.yaml`:
