@@ -28,7 +28,7 @@ Generally we update a few times a year and we do 3/4 releases the same day, so l
 
 See <https://calver.org/>
 
-## Image build on DockerHub (stopped working)
+## Image build
 
 This is setup [on DockerHub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light)
 
@@ -41,7 +41,7 @@ The `Makefile` in this directory provides useful docker commands.  All commands 
 
 * `make build` builds a container from the Dockerfile
 * `make shell` will drop you into an image shell; useful if you want to check anything before pushing
-* `make push` uploads the container to https://hub.docker.com/r/zonca/docker-jupyter-cdms-light.  For this command to work you will (1) need access to this dockerhub project and (2) need to authenticate to dockerhub.push it to Dockerhub.  
+* `make push` uploads the container to https://hub.docker.com/r/zonca/docker-jupyter-cdms-light.  For this command to work you will (1) need access to this dockerhub project and (2) need to authenticate to dockerhub. 
 
 ## Deploy in production
 
