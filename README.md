@@ -36,7 +36,23 @@ It automatically builds `master` as `latest` and it builds all the tags.
 Better not use `latest` in production, always make a tag and use that.
 
 Unfortunately [Docker stopped providing free autobuilds](https://www.docker.com/blog/changes-to-docker-hub-autobuilds),
-so now we need to build a new image on a machine with Docker and then push to Dockerhub.
+so now we need to build a new image on a machine with Docker and then push to Dockerhub:
+
+```
+sudo docker build -t zonca/docker-jupyter-cdms-light:<version> .
+sudo docker login
+sudo docker push zonca/docker-jupyter-cdms-light:<version>
+```
+
+See the section above for information on defining the version.
+
+You can check your container before pushing it with:
+
+```
+sudo docker run -it zonca/docker-jupyter-cdms-light:<version>
+sudo docker ps #this output will tell you the image name
+sudo docker exec -it <container_name> bash
+```
 
 ## Deploy in production
 

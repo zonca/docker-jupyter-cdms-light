@@ -20,6 +20,8 @@ RUN yum install -y vim-enhanced nano emacs \
 
 RUN curl https://rclone.org/install.sh | bash
 
+RUN curl https://rclone.org/install.sh | bash
+
 USER $NB_UID
 
 # upgrade all conda packages
