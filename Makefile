@@ -9,3 +9,6 @@ push:
 
 shell:
 	docker run -it zonca/docker-jupyter-cdms-light:${VERSION} bash
+
+tag:
+	git tag -a ${VERSION} -m "Tag ${VERSION} in Github repository"

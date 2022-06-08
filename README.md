@@ -43,6 +43,8 @@ The `Makefile` in this directory provides useful docker commands.  All commands 
 * `make shell` will drop you into an image shell; useful if you want to check anything before pushing
 * `make push` uploads the container to [dockerhub](https://hub.docker.com/r/zonca/docker-jupyter-cdms-light).  For this command to work you will need access to this dockerhub project - get a dockerhub account if you don't already have one and request access from the maintainer of this repository.  You can `make login` if you are not already authenticated to dockerhub. 
 
+If your shell supports tab completion, `make` <kbd>space</kbd><kbd>tab</kbd><kbd>tab</kbd> will show all available commands (or "targets" in make-language).  You can also open `Makefile` in a text editor to see available targets.
+
 ## Deploy in production
 
 The version of the image used in production is defined in `config_standard_storage.yaml`:
