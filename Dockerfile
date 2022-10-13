@@ -33,4 +33,4 @@ RUN conda upgrade --quiet --yes --all && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
-RUN pip install mariadb sqlalchemy
+RUN pip install mariadb==1.0.11 sqlalchemy dask-labextension
